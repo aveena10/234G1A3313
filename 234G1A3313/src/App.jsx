@@ -1,24 +1,21 @@
-import { useState, useEffect } from "react"
+
+import { log } from "./logging middleware/logger";
+import { useEffect } from "react";
 
 function App() {
-  const [trains, setTrains] = useState([])
-
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(res => res.json())
-      .then(data => setTrains(data))
-  }, [])
+    log(
+      "info",
+      "notifications/prioritization",
+      "Displayed top unread notifications"
+    );
+  }, []);
 
   return (
     <div>
-      {trains.map(train => (
-        <div key={train.id}>
-          <h2>{train.name}</h2>
-          <p>{train.email}</p>
-        </div>
-      ))}
+      <h1>My Notification App</h1>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
