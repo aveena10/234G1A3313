@@ -6,7 +6,7 @@ function App() {
   useEffect(() => {
     log(
       "info",
-      "notifications/prioritization",
+      "notifications/api",
       "Displayed top unread notifications"
     );
   }, []);
